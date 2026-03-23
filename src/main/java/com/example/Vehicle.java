@@ -3,13 +3,13 @@ package com.example;
 import java.time.LocalDate;
 
 public class Vehicle {
-    String plate; 
-    String brand;
-    int year;
-    String fuel;
-    int price;
-    Boolean climate;
-    LocalDate permission;
+    private String plate; 
+    private String brand;
+    private int year;
+    private String fuel;
+    private int price;
+    private Boolean climate;
+    private LocalDate permission;
 
     public Vehicle() {}
 

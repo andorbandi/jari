@@ -19,7 +19,7 @@ public class Solution {
 
     public static void printPetrolDatas() {
         vehicleList.forEach(vehicle -> {
-            if (vehicle.fuel.equals("benzin")) {
+            if (vehicle.getFuel().equals("benzin")) {
                 System.out.printf("%s %s %d %s %d %s %s\n", 
                 vehicle.getPlate(),
                 vehicle.getBrand(),
@@ -35,7 +35,7 @@ public class Solution {
     public static void printLeastThanOneMillion() {
         System.out.println("\nOlcsóbb mint 1 millió forint:");
         vehicleList.forEach(vehicle -> {
-            if (vehicle.price < 1000000) {
+            if (vehicle.getPrice() < 1000000) {
                 System.out.printf("%s %s %d %s %d %s %s\n", 
                 vehicle.getPlate(),
                 vehicle.getBrand(),
@@ -51,7 +51,7 @@ public class Solution {
     public static void printMoreThanOneYearPermission() {
         System.out.println("\nTöbb mint egy évig van műszakija:");
         vehicleList.forEach(vehicle -> {
-            if (vehicle.permission.isAfter(LocalDate.now().minusYears(1))) {
+            if (vehicle.getPermission().isAfter(LocalDate.now().minusYears(1))) {
                 System.out.printf("%s %s %d %s %d %s %s\n", 
                 vehicle.getPlate(),
                 vehicle.getBrand(),
@@ -67,7 +67,7 @@ public class Solution {
     public static void printHondas() {
         System.out.println("\nHonda autok:");
         vehicleList.forEach(vehicle -> {
-            if (vehicle.brand.equals("Honda")) {
+            if (vehicle.getBrand().equals("Honda")) {
                 System.out.printf("%s %s %d %s %d %s %s\n", 
                 vehicle.getPlate(),
                 vehicle.getBrand(),
@@ -80,5 +80,27 @@ public class Solution {
         });
     }
 
+    public static void printIncomeSum() {
+        int sum = 0;
+        for(Vehicle vehicle : vehicleList) {
+            sum += vehicle.getPrice();
+        }
+
+        System.out.printf("Összes bevétel: %d Ft\n", sum);
+    }
+
+    public static void printIfHasHonda() {
+        String ker = "Honda";
+        int n = vehicleList.size();
+        int i = 0;
+        while( i < n && !vehicleList.get(i).equals(ker)) {
+            i++;
+        }
+        if(i<n) {
+            System.out.println("Van: " + ker);
+        }else {
+            System.err.println("Nincsen Honda");
+        }
+    }
 
 }

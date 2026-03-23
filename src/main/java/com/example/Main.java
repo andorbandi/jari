@@ -9,7 +9,8 @@ public class Main {
         // Solution.printLeastThanOneMillion();
         // Solution.printMoreThanOneYearPermission();
         // Solution.printHondas();
-        Solution.printIncomeSum();
-        Solution.printIfHasHonda();
+        // Solution.printIncomeSum();
+        // Solution.printIfHasHonda();
+        Solution.printCheapest();
     }
 }
